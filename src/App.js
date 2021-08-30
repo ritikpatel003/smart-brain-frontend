@@ -51,7 +51,7 @@ function App() {
 
 
   const getData = async () => {
-    const abc = await fetch("http://localhost:3000");
+    const abc = await fetch("https://pure-bayou-89320.herokuapp.com/");
     const actualData = await abc.json();
     console.log(actualData);
   };
@@ -86,7 +86,7 @@ function App() {
     var res = await app.models.predict(Clarifai.FACE_DETECT_MODEL,input);
     res = await calculateFaceLocation(res);
     displayFaceBox(res);
-    var response = await fetch('http://localhost:3000/image', {
+    var response = await fetch('https://pure-bayou-89320.herokuapp.com/', {
       method: 'put',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
